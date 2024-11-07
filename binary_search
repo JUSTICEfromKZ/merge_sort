@@ -1,0 +1,23 @@
+def binary_search(list, item):
+    low = 0
+    hight = len(list) - 1
+    blo = False
+
+    while low <= hight and not blo:
+        midl = (low + hight)//2
+        if item == list[midl]:
+            blo = True
+            return list.index(item), blo
+        if list[midl] > item:
+            hight = midl - 1
+        else:
+            low = midl + 1
+    return blo
+a = [1,2,3,4,5,6,7,8,9]
+b = 4
+result = binary_search(a, b)
+print(result)
+if result:
+    print("YES")
+else:
+    print("NO")
